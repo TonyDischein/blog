@@ -1,0 +1,37 @@
+body {
+    background: #e5e6e5;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    background-color: white;
+    border: 2px solid silver;
+    padding: 20px;
+    margin: 10px 0;
+}
+.article__top-title, .article__published-date {
+    font-size: 14px;
+    font-family: "Arial";
+    color: rgb(152, 155, 159);
+}
+
+.atricle__title h2 a{
+    font-size: 28px;
+    font-family: "YanoneKaffeesatz";
+    color: rgb(0, 0, 0);
+    line-height: 1.071;
+}
+
+.article__description {
+    font-size: 17px;
+    font-family: "Arial";
+    color: rgb(0, 0, 0);
+    line-height: 1.412;
+    padding-left: 10px;
+}
+
+.article__content {
+    display: flex;
+}
