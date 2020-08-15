@@ -13,7 +13,7 @@
             {{method_field('PUT')}}
             {{csrf_field()}}
             {{--Form include--}}
-            @include('admin.user.partials.form')
+            @include('admin.users.partials.form')
 
         </form>
 

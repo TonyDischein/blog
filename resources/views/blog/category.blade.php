@@ -8,7 +8,7 @@
         <div class="article">
             <div class="atricle__top-content">
                 <div class="article__top-title">{{$article->title}}</div>
-                <div class="article__published-date"></div>
+                <div class="article__published-date">{{$article->created_at}}</div>
             </div>
             <div class="article__body">
                 <div class="article__main-content">
@@ -17,7 +17,7 @@
                     </div>
                     <div class="article__content">
                         <div class="article__image">
-                            <img src="https://via.placeholder.com/150" alt="{{$article->title}}">
+                            <img style="width: 200px; height: 200px" src="@if($article->image){{ asset('/storage/' . $article->image) }}@else https://via.placeholder.com/150 @endif" alt="{{$article->title}}">
                             <p></p>
                         </div>
                         <div class="article__description">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="article__author"></div>
+                <div class="article__author">{{$article->user->name}}</div>
             </div>
         </div>
         @empty

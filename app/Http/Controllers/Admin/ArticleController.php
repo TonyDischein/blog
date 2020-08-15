@@ -87,9 +87,12 @@ class ArticleController extends Controller
      */
     public function update(ArticleUpdateRequest $request, Article $article)
     {
-/*        if ($request->file('image')) {
-            $path = $request->file('image')->storePublicly('public/images/index');
-        }*/
+
+        if ($request->file('image_file')) {
+            $path = $request->file('image_file')->store('uploads', 'public');
+
+            $request['image'] = $path;
+        }
 
         $article->update($request->except('slug'));
 

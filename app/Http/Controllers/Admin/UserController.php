@@ -75,7 +75,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.user.edit', [
+        return view('admin.users.edit', [
             'user' => $user
         ]);
     }
@@ -104,6 +104,8 @@ class UserController extends Controller
         $user->name = $request['name'];
         $user->email = $request['email'];
         $request['password'] == null ?: $user->password = bcrypt($request['password']);
+
+        $user->update();
 
         return  redirect()->route('admin.user.index');
     }

@@ -16,6 +16,10 @@ class Article extends Model
         return $this->morphToMany(Category::class, 'categoryable');
     }
 
+    public function user() {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
     //Mutators
     public function setSlugAttribute($value) {
         $this->attributes['slug'] = Str::slug(mb_substr($this->title, 0, 40) . "-" . Carbon::now()->format('dmyHi'), '-');

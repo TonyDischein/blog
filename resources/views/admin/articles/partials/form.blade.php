@@ -22,9 +22,9 @@
 </select>
 
 <div class="image-block">
-    <img src="{{ url($article->image) }}" alt="">
+    <img src="{{ asset('/storage/' . $article->image) }}" alt="">
     <label>Картинка</label>
-    <input type="file" class="form-control" id="image" name="image" >
+    <input type="file" class="form-control" id="image" name="image_file" >
     <input type="text" placeholder="Загрузить изображение" disabled>
 </div>
 
