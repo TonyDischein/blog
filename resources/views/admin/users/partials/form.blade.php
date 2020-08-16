@@ -13,6 +13,17 @@
 <label for="email">Email</label>
 <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="@if(old('email')){{old('email')}}@else{{$user->email ?? ""}}@endif" required>
 
+<label for="role">Группа пользователей</label>
+<select name="role" id="role" class="form-control">
+    @foreach($roles as $role)
+        @if($role->id == $user->role)
+            <option selected value="{{$role->id}}">{{$role->name}}</option>
+        @else
+            <option value="{{$role->id}}">{{$role->name}}</option>
+        @endif
+    @endforeach
+</select>
+
 <label for="password">Пароль</label>
 <input type="password" class="form-control" id="password" name="password" >
 

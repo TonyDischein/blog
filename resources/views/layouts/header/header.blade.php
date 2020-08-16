@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+            {{--{{ config('app.name', 'Laravel') }}--}}
+            <img class="logo" src="{{url('/storage/logo.png')}}" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -12,7 +13,15 @@
             <ul class="navbar-nav mr-auto">
                 @include('layouts.header.top_menu', ['categories' => $categories])
             </ul>
-
+            <form action="{{route('search')}}" role="search" method="get">
+                {{--{{csrf_field()}}--}}
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="">
+                    <span class="input-group-btn">
+    	                <button class="btn btn-info" type="submit"> <i class="glyphicon glyphicon-search">Поиск</i></button>
+	                </span>
+                </div>
+            </form>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->

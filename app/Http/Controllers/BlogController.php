@@ -16,8 +16,6 @@ class BlogController extends Controller
     }
 
     public function article($slug) {
-
-        //dd(Article::where('slug', $slug)->with('user:id,name')->first());
         return view('blog.article', [
             'article' => Article::where('slug', $slug)->first()
         ]);

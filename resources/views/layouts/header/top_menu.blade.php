@@ -8,7 +8,7 @@
             @include('layouts.header.top_menu', ['categories' => $category->children])
         </ul>
     @else
-        <li>
+        <li class="top-menu-li">
             <a href="{{url("/blog/category/$category->slug")}}">{{$category->title}}</a>
     @endif
         </li>

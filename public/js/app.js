@@ -9233,7 +9233,7 @@ select = Sizzle.select = function( selector, context, results, seed ) {
 			}
 			if ( ( find = Expr.find[ type ] ) ) {
 
-				// Search, expanding context for leading sibling combinators
+				// SearchController, expanding context for leading sibling combinators
 				if ( ( seed = find(
 					token.matches[ 0 ].replace( runescape, funescape ),
 					rsibling.test( tokens[ 0 ].type ) && testContext( context.parentNode ) ||
@@ -24710,7 +24710,7 @@ return jQuery;
      * _.indexOf([1, 2, 1, 2], 2);
      * // => 1
      *
-     * // Search from the `fromIndex`.
+     * // SearchController from the `fromIndex`.
      * _.indexOf([1, 2, 1, 2], 2, 2);
      * // => 3
      */
@@ -24895,7 +24895,7 @@ return jQuery;
      * _.lastIndexOf([1, 2, 1, 2], 2);
      * // => 3
      *
-     * // Search from the `fromIndex`.
+     * // SearchController from the `fromIndex`.
      * _.lastIndexOf([1, 2, 1, 2], 2, 2);
      * // => 1
      */
@@ -37486,7 +37486,7 @@ exports._unrefActive = exports.active = function(item) {
 // setimmediate attaches itself to the global object
 __webpack_require__(/*! setimmediate */ "./node_modules/setimmediate/setImmediate.js");
 // On some exotic environments, it's not clear which object `setimmediate` was
-// able to install onto.  Search each possibility in the same order as the
+// able to install onto.  SearchController each possibility in the same order as the
 // `setimmediate` library.
 exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
                        (typeof global !== "undefined" && global.setImmediate) ||
@@ -49818,7 +49818,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
-  
+
 )
 
 /* hot reload */
@@ -49838,7 +49838,7 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 

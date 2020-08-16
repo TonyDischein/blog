@@ -3,7 +3,7 @@
 @section('title', $category->title)
 
 @section('content')
-    <div class="container">
+    <div class="container container-content">
         @forelse($articles as $article)
         <div class="article">
             <div class="atricle__top-content">
@@ -17,15 +17,16 @@
                     </div>
                     <div class="article__content">
                         <div class="article__image">
-                            <img style="width: 200px; height: 200px" src="@if($article->image){{ asset('/storage/' . $article->image) }}@else https://via.placeholder.com/150 @endif" alt="{{$article->title}}">
-                            <p></p>
+                            <img  src="@if($article->image){{ asset('/storage/' . $article->image) }}@else https://via.placeholder.com/150 @endif" alt="{{$article->title}}">
+                            <p>test</p>
                         </div>
                         <div class="article__description">
                             {!!$article->description_short!!}
                         </div>
+                        <div class="article__author">{{$article->user->name}}</div>
                     </div>
+
                 </div>
-                <div class="article__author">{{$article->user->name}}</div>
             </div>
         </div>
         @empty

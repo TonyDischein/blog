@@ -8,6 +8,11 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    const ROLE_ADMIN = 1;
+    const ROLE_MODER = 2;
+    const ROLE_USER = 3;
+
+
     use Notifiable;
 
     /**
@@ -16,7 +21,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role'
     ];
 
     /**
@@ -36,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin(): bool
+    {
+        return $this->role === self::ROLE_ADMIN;
+    }
+    public function isModerator(): bool
+    {
+        return $this->role === self::ROLE_MODER;
+    }
 }

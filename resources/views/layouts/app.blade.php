@@ -24,11 +24,11 @@
 </head>
 <body>
     <div id="app">
-       @include('layouts.header.header')
+        @include('layouts.header.header')
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        @yield('content')
+
+        @include('layouts.footer.footer')
     </div>
 </body>
 </html>

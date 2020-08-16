@@ -44,7 +44,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="{{route('admin.user.index')}}">Пользователи</a>
+                        @if($admin)
+                            <a href="{{route('admin.user.index')}}">Пользователи</a>
+                        @endif
+
                     </li>
                 </ul>
 

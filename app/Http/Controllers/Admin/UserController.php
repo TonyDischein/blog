@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Roles;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -50,6 +51,7 @@ class UserController extends Controller
         User::create([
             'name' => $request['name'],
             'email' => $request['email'],
+            'role' => 3,
             'password' =>bcrypt($request['password'])
         ]);
 
@@ -76,7 +78,8 @@ class UserController extends Controller
     public function edit(User $user)
     {
         return view('admin.users.edit', [
-            'user' => $user
+            'user' => $user,
+            'roles' => Roles::all()
         ]);
     }
 
@@ -103,6 +106,7 @@ class UserController extends Controller
 
         $user->name = $request['name'];
         $user->email = $request['email'];
+        $user->role = $request['role'];
         $request['password'] == null ?: $user->password = bcrypt($request['password']);
 
         $user->update();

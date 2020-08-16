@@ -5,12 +5,20 @@
 @section('meta_description', $article->meta_description)
 
 @section('content')
-    <div class="container">
+    <div class="container container-content">
         <div class="row">
             <div class="col-md-12">
-                <h1>{{$article->title}}</h1>
-                <p>{!!$article->description!!}</p>
-                <img style="width: 200px; height: 200px" src="@if($article->image){{ asset('/storage/' . $article->image) }}@else https://via.placeholder.com/150 @endif" alt="{{$article->title}}">
+                <div class="content">
+                    <div class="content__img">
+                        <img src="@if($article->image){{ asset('/storage/' . $article->image) }}@else https://via.placeholder.com/150 @endif" alt="{{$article->title}}">
+                    </div>
+                    <div class="content__title">
+                        <h1>{{$article->title}}</h1>
+                    </div>
+                    <div class="content__description">
+                        <p>{!!$article->description!!}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

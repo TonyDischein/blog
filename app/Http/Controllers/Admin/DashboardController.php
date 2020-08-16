@@ -12,6 +12,7 @@ class DashboardController extends Controller
 {
     public function dashboard() {
         /*dd( Auth::user()->id);*/
+
         return view('admin.dashboard', [
             'categories' => Category::lastCategories(5),
             'articles' => Article::lastArticles(5),

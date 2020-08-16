@@ -7,6 +7,7 @@ use App\Http\Requests\ArticleUpdateRequest;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -17,7 +18,12 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::orderBy('created_by', 'desc')->paginate(10);
+        if (Auth::user()->isAdmin()) {
+            $articles = Article::orderBy('created_by', 'desc')->paginate(10);
+        } else {
+            $articles = Article::where('created_by', '=', Auth::user()->id )->paginate(10);
+        }
+
         return view('admin.articles.index', compact('articles'));
     }
 
@@ -71,11 +77,15 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        return view('admin.articles.edit', [
-            'article' => $article,
-            'categories' => Category::with('children')->where('parent_id', 0)->get(),
-            'delimiter' => ''
-        ]);
+        if (Auth::user()->isAdmin() || Auth::user()->id == $article->created_by) {
+            return view('admin.articles.edit', [
+                'article' => $article,
+                'categories' => Category::with('children')->where('parent_id', 0)->get(),
+                'delimiter' => ''
+            ]);
+        }
+
+        abort(404);
     }
 
     /**
